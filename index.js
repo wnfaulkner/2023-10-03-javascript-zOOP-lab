@@ -58,8 +58,58 @@ class Mammal extends Animal {
 
 }
 
+class Bird extends Animal {
+    constructor(name, species, age, gender, wingspan){
+        super(name, species, age, gender)
+        this.wingspan = wingspan
+    }
+
+    describe(){
+        console.log(`This ${this.species} is named ${this.name} and has ${this.wingspan} wings. They are a ${this.age} year-old ${this.gender}!`)
+    }
+
+    feed(){
+        console.log(`${this.name} is drinking nectar.`)
+    }
+
+    makeSound(){
+        console.log(`${this.name} is humming.`)
+    }
+
+    move(){
+        console.log(`${this.name} is flitin'round.`)
+    }   
+
+}
+
+class Reptile extends Animal {
+    constructor(name, species, age, gender, scaleColor){
+        super(name, species, age, gender)
+        this.scaleColor = scaleColor
+    }
+
+    describe(){
+        console.log(`This ${this.species} is named ${this.name} and has ${this.scaleColor} scales. They are a ${this.age} year-old ${this.gender}!`)
+    }
+
+    feed(){
+        console.log(`${this.name} is munching on mice.`)
+    }
+
+    makeSound(){
+        console.log(`${this.name} is hissing.`)
+    }
+
+    move(){
+        console.log(`${this.name} is lumberin'long.`)
+    }   
+
+}
+
 //Instantiate
     const louis = new Mammal('king louis','orangutang','12','king of the jungle','orange')
+    const flit = new Bird('flit','hummingbird','two','speedy','3in')
+    const ticToc = new Reptile('tic-toc','gator','twelve','knobby','iridescent pink')
 
 //Tests
     // louis.describe()
@@ -108,6 +158,8 @@ class Zoo {
 //Tests
     zoolanderZoo.addAnimal(louis)
     zoolanderZoo.addAnimal(tony)
+    zoolanderZoo.addAnimal(flit)
+    zoolanderZoo.addAnimal(ticToc)
     zoolanderZoo.displayAnimals()
     zoolanderZoo.feedAnimals()
     zoolanderZoo.listenToAnimals()
